@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
 <style>
 :root{--bg:#f6f3ff;--surf:#fff;--ink:#14102b;--mut:#625b82;--line:#e5def8;
 --p:#ff3d81;--o:#ff7a1a;--y:#ffe14d;--c:#19d3ff;--v:#7a3cff;--g:#b6ff3b;--ease:cubic-bezier(.22,1,.36,1);
@@ -111,8 +112,8 @@ h1 span{background:linear-gradient(95deg,var(--p),var(--o),var(--y),var(--p));ba
 .cta .btn{margin:6px}
 footer{text-align:center;color:var(--mut);padding:10px 0 90px;font-size:.9rem;display:flex;gap:8px;justify-content:center;align-items:center}
 footer .i{color:var(--p)}
-.rv{opacity:0;transform:translateY(44px) scale(.96);filter:blur(6px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease);transition-delay:calc(var(--i,0)*80ms)}
-.rv.in{opacity:1;transform:none;filter:none}
+.js .rv{opacity:0;transform:translateY(44px) scale(.96);filter:blur(6px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease);transition-delay:calc(var(--i,0)*80ms)}
+.js .rv.in{opacity:1;transform:none;filter:none}
 .rv.done{transition:transform .5s var(--ease),box-shadow .5s,border-color .4s;transition-delay:0s}
 .top{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));width:58px;height:58px;border-radius:50%;border:0;background:linear-gradient(135deg,var(--v),var(--p));color:#fff;cursor:pointer;display:grid;place-items:center;z-index:20;box-shadow:0 14px 30px -8px rgba(122,60,255,.7);opacity:0;transform:translateY(24px) scale(.7);pointer-events:none;transition:opacity .5s var(--ease),transform .6s var(--ease)}
 .top.show{opacity:1;transform:none;pointer-events:auto}
@@ -254,11 +255,11 @@ document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 // brilho que segue o mouse
 document.querySelectorAll('.t').forEach(t=>t.addEventListener('pointermove',e=>{const r=t.getBoundingClientRect();t.style.setProperty('--mx',e.clientX-r.left+'px');t.style.setProperty('--my',e.clientY-r.top+'px')}));
 // voltar ao topo com progresso
-const top=$('#top'),pg=$('#pg');
+const topBtn=$('#top'),pg=$('#pg');
 function sc(){const h=document.documentElement.scrollHeight-innerHeight,p=h>0?scrollY/h:0;
-  top.classList.toggle('show',scrollY>400);pg.style.strokeDashoffset=132*(1-p)}
+  topBtn.classList.toggle('show',scrollY>400);pg.style.strokeDashoffset=132*(1-p)}
 addEventListener('scroll',sc,{passive:true});sc();
-top.addEventListener('click',()=>scrollTo({top:0,behavior:reduce?'auto':'smooth'}));
+topBtn.addEventListener('click',()=>scrollTo({top:0,behavior:reduce?'auto':'smooth'}));
 </script>
 </body>
 </html>
