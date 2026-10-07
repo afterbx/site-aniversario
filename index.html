@@ -219,12 +219,12 @@ tick();setInterval(tick,1000);
 // perguntas
 const faq=[
 ['local','Qual é a data e o horário?','Dia 29/10, às 18:30. Chegue um pouquinho antes para sentarmos todos juntos.'],
-['local','Onde vai ser?','Na Av. Dom Pedro I, 568, em um rodízio de churrasco.'],
+['local','Onde vai ser?','Na Churrascaria Pampulha - Av. Dom Pedro I, 568.'],
 ['comida','Que carnes tem no rodízio?','Carne bovina, suína, frango, rã e capivara.'],
 ['comida','Não como carne. Tem outra opção?','Tem sim! O local também serve comida em geral e sushi.'],
 ['comida','Tem sushi?','Tem! Além do churrasco, o local oferece sushi.'],
 ['bebida','A bebida está inclusa?','Não. A bebida não está inclusa, então cada pessoa paga o que consumir.'],
-['local','Preciso confirmar presença?','Sim, confirme com o aniversariante para organizarmos as mesas.'],
+['local','Preciso confirmar presença?','Sim, confirme comigo até 25/10 para organizarmos as mesas.'],
 ['local','Como chego ao local?','Use o botão de mapa e siga a rota até a Av. Dom Pedro I, 568.']];
 $('#list').innerHTML=faq.map(([c,q,a],i)=>`<div class="q rv" data-c="${c}" style="--i:${i}"><button class="qh" aria-expanded="false"><span>${q}</span><i class="pl">${ic('plus')}</i></button><div class="qb"><div><p>${a}</p></div></div></div>`).join('')+'<p class="empty" id="empty">Nada encontrado. Fale com o aniversariante!</p>';
 const items=[...document.querySelectorAll('.q')];
