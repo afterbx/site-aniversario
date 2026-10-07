@@ -218,7 +218,7 @@ function tick(){const d=T-new Date();
 tick();setInterval(tick,1000);
 // perguntas
 const faq=[
-['local','Qual é a data e o horário?','Dia 29/10, às 18:30. Chegue um pouquinho antes para sentarmos todos juntos.'],
+['local','Qual é a data e o horário?','Dia 31/10, às 18:30. Chegue um pouquinho antes para sentarmos todos juntos.'],
 ['local','Onde vai ser?','Na Churrascaria Pampulha - Av. Dom Pedro I, 568.'],
 ['comida','Que carnes tem no rodízio?','Carne bovina, suína, frango, rã e capivara.'],
 ['comida','Não como carne. Tem outra opção?','Tem sim! O local também serve comida em geral e sushi.'],
@@ -246,7 +246,7 @@ $('#fil').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)
   document.querySelectorAll('#fil button').forEach(x=>x.classList.toggle('on',x===b));cat=b.dataset.c;filt()});
 // calendário
 $('#cal').addEventListener('click',()=>{const y=T.getFullYear();
-  const ics=`BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:Aniversário\nDTSTART:${y}1029T183000\nDTEND:${y}1029T223000\nLOCATION:Av. Dom Pedro I, 568\nEND:VEVENT\nEND:VCALENDAR`;
+  const ics=`BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:Aniversário\nDTSTART:${y}1031T183000\nDTEND:${y}1031T223000\nLOCATION:Av. Dom Pedro I, 568\nEND:VEVENT\nEND:VCALENDAR`;
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));a.download='aniversario.ics';a.click()});
 // aparecer ao rolar (com cascata)
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const el=e.target;el.classList.add('in');io.unobserve(el);setTimeout(()=>el.classList.add('done'),1500)}}),{threshold:.12});
